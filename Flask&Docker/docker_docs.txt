@@ -1,0 +1,30 @@
+# make directoris from bash for different apps 
+
+sudo mkdir web
+sudo mkdir db
+
+# copy necessary files into folder
+
+cd web
+cp ./app.py .
+
+# create Dockerfile and requirements.txt
+
+touch Dockerfile
+touch requirements.txt
+
+
+# fill Dockerfile to build image and requirements.txt with libraries and versions
+
+
+# create docker-compose.yml to control all docker containers
+
+# create docker image by running 
+
+sudo docker-compose build
+
+# then 
+
+sudo docker-compose up
+
+

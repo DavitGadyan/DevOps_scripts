@@ -1,0 +1,24 @@
+# so first of all we need to set global value for name and email
+git config --global user.name "DavitGadyan"
+git config --global user.email "davit_gadyan@edu.aua.am"
+
+# go to directory
+cd some_dir
+
+# initialize git
+git init
+
+# add remote origin
+git remote add origin https://github.com/DavitGadyan/DevOps_scripts.git
+
+# push current changes
+git add .
+git commit -m 'some comment'
+git push origin master
+
+
+
+
+
+
+
