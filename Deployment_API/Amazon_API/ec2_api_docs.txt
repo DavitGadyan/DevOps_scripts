@@ -1,0 +1,44 @@
+# create AWS account (free tier)
+
+# generally we will create EC2 instance put out code for deployment on Github and then ssh into EC2 download code from Github install Docker CE and Docker compose and just run instance with specifying security groups etc..
+
+
+# create EC2 instance via management console API and change security group to allow incoming traffic
+
+# first make your private key cmod and then ssh into EC2 with bash put also private key path and Public DNS from ec2 aws console
+
+cmod ~/Downloads/Tutorial.pem
+
+sudo ssh -i ~/Downloads/Tutorial.pem ubuntu@ec2-18-217-98-39.us-east-2.compute.amazonaws.com
+
+# then you will be sshed into aws ec2 instance .. you see that with changed green info in bash...
+# you will see you have git vim
+
+# push code to Github
+
+# then again ssh in ec2 and create ImageClassification dir
+mkdir ImageClassification
+cd ImageClassification
+
+# then clone code from Github repo
+git clone https://github.com/DavitGadyan/some_repo
+
+# install Docker CE and Docker Compose for Ubuntu
+
+# maybe optional!!
+vim web/app.py
+
+# text ediotr will open in Bash
+
+change code in below to
+app.run(debug=True,host='0.0.0.0',port=5000) # not suggested to have debug True in production!!!
+
+# then at code end
+:wq and press Enter tosave changes
+
+ # then 
+sudo docker-compose build
+sudo docker-compose up
+# and hopefully API is ready to use via Postman!!!
+
+# we will use instead of localhost we will use Public DNS and /classify path where needed to use API..
