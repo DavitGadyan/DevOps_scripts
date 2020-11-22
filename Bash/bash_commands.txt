@@ -1,0 +1,1 @@
+fuser -k 8050/tcp   ---- to release port by killing all process on it
