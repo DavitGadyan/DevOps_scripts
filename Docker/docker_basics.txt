@@ -1,0 +1,87 @@
+
+## to run Docker image
+
+docker run --name MyUbuntu ubuntu:latest
+
+## to list all current docker images
+
+docker ps -a 
+
+
+# run docker image interactivelly i.e. in foreground
+
+sudo docker run -it --name MyUbuntu1 ubuntu:latest
+
+# to send docker to background type ctr + p then ctr + q
+
+# if you need docker image back in foreground type
+
+sudo docker attach MyUbuntu1
+
+# to run command from docker container
+
+sudo docker exec MyUbuntu1 pwd
+
+# to remove docker image
+
+sudo docker rm -f MyUbuntu1
+
+
+### creating and pushing custom image to dockerhub
+
+sudo docker run -it --name MyUbuntu ubuntu:latest
+
+
+## install nginx and curl
+
+apt-get install nginx
+apt-get install curl
+
+# check whether nginx installed
+
+which nginx
+
+
+service nginx start
+
+curl http:/localhost:80
+
+### if nginx is working following will show up
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+
+
+
+### to commit custom image 
+
+sudo docker commit MyUbuntu dyada/ubuntunginx
+
+### downloading custom image
+
+sudo docker run -it --name customUb dyada/ubuntunginx
+
+
