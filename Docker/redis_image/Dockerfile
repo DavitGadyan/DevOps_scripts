@@ -1,0 +1,8 @@
+#   USE AN EXISTING IMAGE AS BASE
+FROM alpine
+
+# DOWNLOAD AND INSTALL DEPENDENCY
+RUN apk add --update redis
+
+# RUN COMMANDS
+CMD ["redis-server"]
