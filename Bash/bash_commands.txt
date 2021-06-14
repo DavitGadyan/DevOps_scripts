@@ -1,1 +1,16 @@
 fuser -k 8050/tcp   ---- to release port by killing all process on it
+
+
+# when you have unmet dependencies ERROR!!!
+sudo rm /etc/apt/sources.list.d/cuda.list
+sudo apt-get clean
+sudo apt-get update
+sudo apt install -f
+
+
+# tensorflow libcublas error !!! Ubuntu 18.04 rtx2080 ti cuda 10.1 cudnn 7.6 tf 2.1-2.3
+https://stackoverflow.com/questions/63893306/tensorflow-2-3-0-in-ubuntu-libcublas-so-10-cannot-open-shared-object-file/64174245#64174245
+
+solution that worked for me >>>> I had the same problem, I went to the https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ and downloaded and installed libcublas10_10.1.0.105-1_amd64.deb
+
+
